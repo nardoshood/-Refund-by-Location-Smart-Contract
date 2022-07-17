@@ -15,6 +15,6 @@ describe("RefundbyLoction", function(){
     const Location = await ethers.getContractFactory("Location");
     const location = await Location.deploy();
     assert.isDefined(location.address);
-  }).timeout(10000);
+  }).timeout(1000);
   
 }) 
