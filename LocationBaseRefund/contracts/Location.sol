@@ -39,13 +39,15 @@ contract Location {
         string memory publicKey,
         uint256 latitude,
         uint256 longitude,
-        string memory duration
+        string memory duration,
+        stind radius
     ) public {
         require(msg.sender == employer);
         employeeDevice[_address].publicKey = publicKey;
         employeeDevice[_address].latitude = latitude;
         employeeDevice[_address].longitude = longitude;
         employeeDevice[_address].duration = duration;
+        employeeDevice[_address].radius = radius;
         employees.push(_address);
     }
 
@@ -65,7 +67,8 @@ contract Location {
             employeeDevice[_address].publicKey,
             employeeDevice[_address].latitude,
             employeeDevice[_address].longitude,
-            employeeDevice[_address].duration
+            employeeDevice[_address].duration,
+            employeeDevice[_address].radius
     
         );
     }
